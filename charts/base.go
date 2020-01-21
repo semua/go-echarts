@@ -1,6 +1,7 @@
 package charts
 
 import (
+	// "html/template"
 	"regexp"
 
 	"github.com/semua/go-echarts/datatypes"
@@ -138,6 +139,10 @@ type BaseOpts struct {
 	HasRadar      bool // 图形是否拥有 Radar 组件
 	HasParallel   bool // 图形是否拥有 Parallel 组件
 	HasSingleAxis bool // 图形是否拥有 singleAxis 组件
+
+	CustomOption     bool //是否使用custom option
+	CustomOptionJson string
+	CustomVar        string
 }
 
 // 设置全局颜色
@@ -149,6 +154,21 @@ func (opt *BaseOpts) setColor(options ...seriesOptser) {
 			opt.insertSeriesColors(option.(ColorOpts))
 		}
 	}
+}
+
+// 设置customOption
+func (opt *BaseOpts) setCustomOption(custom bool) {
+	opt.CustomOption = custom
+}
+
+// 设置customOptionJson
+func (opt *BaseOpts) setCustomOptionJson(customJson string) {
+	opt.CustomOptionJson = customJson
+}
+
+// 设置customVar
+func (opt *BaseOpts) setCustomVar(customVar string) {
+	opt.CustomVar = customVar
 }
 
 // 初始化全局颜色列表

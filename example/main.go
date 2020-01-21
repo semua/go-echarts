@@ -93,6 +93,7 @@ var (
 		{"themeRiver", charts.RouterOpts{URL: host + "/themeRiver", Text: "ThemeRiver-(主题河流图)"}},
 		{"wordCloud", charts.RouterOpts{URL: host + "/wordCloud", Text: "WordCloud-(词云图)"}},
 		{"page", charts.RouterOpts{URL: host + "/page", Text: "Page-(顺序多图)"}},
+		{"customChart", charts.RouterOpts{URL: host + "/customChart", Text: "customChart-(自定义)"}},
 	}
 )
 
@@ -152,7 +153,7 @@ func main() {
 	http.HandleFunc("/funnel", logTracing(funnelHandler))
 	http.HandleFunc("/gauge", logTracing(gaugeHandler))
 	http.HandleFunc("/geo", logTracing(geoHandler))
-	http.HandleFunc("/graph", logTracing(graphHandler))
+	// http.HandleFunc("/graph", logTracing(graphHandler))
 	http.HandleFunc("/heatMap", logTracing(heatMapHandler))
 	http.HandleFunc("/kline", logTracing(klineHandler))
 	http.HandleFunc("/line", logTracing(lineHandler))
@@ -163,13 +164,14 @@ func main() {
 	http.HandleFunc("/parallel", logTracing(parallelHandler))
 	http.HandleFunc("/pie", logTracing(pieHandler))
 	http.HandleFunc("/radar", logTracing(radarHandler))
-	http.HandleFunc("/sankey", logTracing(sankeyHandler))
+	// http.HandleFunc("/sankey", logTracing(sankeyHandler))
 	http.HandleFunc("/scatter", logTracing(scatterHandler))
 	http.HandleFunc("/scatter3D", logTracing(scatter3DHandler))
 	http.HandleFunc("/surface3D", logTracing(surface3DHandler))
 	http.HandleFunc("/themeRiver", logTracing(themeRiverHandler))
 	http.HandleFunc("/wordCloud", logTracing(wcHandler))
 	http.HandleFunc("/page", logTracing(pageHandler))
+	http.HandleFunc("/customChart", logTracing(customChartHandler))
 
 	log.Println("Run server at " + host)
 	http.ListenAndServe(":8080", nil)

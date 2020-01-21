@@ -16,7 +16,7 @@ var ChartType = struct {
 	Radar,
 	Sankey, Scatter, Scatter3D, Surface3D,
 	ThemeRiver,
-	WordCloud string
+	WordCloud, CustomChart string
 }{
 	Bar:           "bar",
 	Bar3D:         "bar3D",
@@ -42,6 +42,7 @@ var ChartType = struct {
 	Surface3D:     "surface",
 	ThemeRiver:    "themeRiver",
 	WordCloud:     "wordCloud",
+	CustomChart:   "customChart",
 }
 
 // ThemeType contains string representations of them types.
