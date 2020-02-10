@@ -27,7 +27,7 @@ func (c *CustomChart) SetCustomOption(customOption bool) *CustomChart {
 }
 
 func (c *CustomChart) validateOpts() {
-	c.validateAssets(c.AssetsHost)
+	c.validateAssets(c.BaseOpts.AssetsHost)
 }
 
 // CustomChart creates a new custom chart.
@@ -40,5 +40,6 @@ func NewCustomChart(routers ...RouterOpts) *CustomChart {
 
 // Render renders the chart and writes the output to given writers.
 func (c *CustomChart) Render(w ...io.Writer) error {
+	c.validateOpts()
 	return renderToWriter(c, "chart", []string{}, w...)
 }

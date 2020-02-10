@@ -24,7 +24,9 @@ type InitOpts struct {
 	// 图表 ID，是图表唯一标识
 	ChartID string
 	// 静态资源 host 地址
-	AssetsHost string `default:"https://cdn.bootcss.com/echarts/4.3.0/"`
+	//AssetsHost string `default:"https://cdn.bootcss.com/echarts/4.3.0/"`
+	AssetsHost string `default:"https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/"`
+	//AssetsHost string `default:"http://ned.cnfic.com.cn/static/gentelella/vendors/echarts/dist/"`
 	// 图表主题
 	Theme string `default:"white"`
 }
