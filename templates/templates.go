@@ -94,19 +94,23 @@ var ChartTpl = `{{- define "chart" }}
 </html>
 {{ end }}
 `
+
 var HeaderTpl = `{{ define "header" }}
 <head>
     <meta charset="utf-8">
     <title>{{ .PageTitle }}</title>
-{{- range .JSAssets.Values }}
-    <script src="{{ . }}"></script>
-{{- end }}
+	<script type="text/javascript">eval({{ .EchartsTpl }})</script>
+
 {{- range .CSSAssets.Values }}
     <link href="{{ . }}" rel="stylesheet">
 {{- end }}
 </head>
 {{ end }}
 `
+
+//{{- range .JSAssets.Values }}
+//    <script src="{{ . }}"></script>
+//{{- end }}
 var PageTpl = `{{- define "page" }}
 <!DOCTYPE html>
 <html>
